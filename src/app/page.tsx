@@ -1,101 +1,89 @@
-import Image from "next/image";
+import Landing from "@/components/landing";
+import Link from "next/link";
 
-export default function Home() {
+export const Page = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col items-center justify-center w-3/5 gap-1 mb-10 mt-3">
+      <h1 className="text-4xl font-semibold">AirBnB Analysis</h1>
+      <p>
+        by Shaurya Pathak, Kavin Phabiani, Rishika Mundada, Jonathan Trujillo,
+        Sean Quiambao
+      </p>
+      <strong id="about">About</strong>
+      <p>
+        The goal of this project is to understand the patterns and relationships
+        in the Airbnb dataset using predictive and clustering models to gain
+        insight into this market. We used both supervised (XGBoost regression)
+        and unsupervised models (K-means clustering) to uncover patterns and
+        correlations in the Airbnb dataset. Our main goal is to predict listing
+        prices based on key features like location, room type, and availability.
+        Additionally, we aim to group listings with similar attributes using
+        clustering models to identify trends and segmentation in the Airbnb
+        market.
+      </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <strong id="dataset">Dataset</strong>
+      <Link
+        href={"https://insideairbnb.com/get-the-data/"}
+        target={"_blank"}
+        className="text-blue-600 font-semibold"
+      >
+        {" "}
+        Link
+      </Link>
+
+      <p>
+        The dataset consists of 45,000 Airbnb listings retrieved from the
+        insideairbnb website. The dataset provides detailed information about
+        each listing, including attributes such as the listing name, host
+        details, neighborhood information, geographical coordinates, room type,
+        price, availability, minimum stay requirements, the number of reviews,
+        review frequency, and license information. For our analysis, we utilized
+        key features like room type, price, neighborhood, and reviews to predict
+        listing prices and cluster similar listings. Location data, such as
+        latitude and longitude, was primarily used for geographical analysis and
+        visualizations. Some data cleanup and preprocessing steps were taken to
+        address any non-alphanumeric data in the name columns before text
+        mining.
+      </p>
+      <Landing />
+      <div id="conclusion" className="flex flex-col gap-2 items-center">
+        <strong className="text-2xl">Conclusion</strong>
+        <p>
+          The objective of this project is to predict Airbnb listing prices in
+          Los Angeles, California, using the XGBoost model for supervised
+          learning. Additionally, the project aims to identify market trends and
+          group listings with similar attributes through clustering models, such
+          as the k-means algorithm, to better understand the underlying
+          structure of the Airbnb market.
+        </p>
+        <p>
+          For unsupervised learning, the k-means clustering algorithm was
+          employed to analyze patterns and relationships among the most common
+          terms in Airbnb listing descriptions. Prior to applying the clustering
+          algorithm, a bag-of-words model was used to extract the top 100 most
+          frequent terms from the dataset. These terms included descriptors like
+          “private,” “bedroom,” and “luxury,” which were used as features for
+          clustering. The k-means algorithm helped categorize listings into
+          distinct groups based on the combinations of these keywords, providing
+          insights into how different attributes influence listing
+          characteristics and pricing.
+        </p>
+        <p>
+          For supervised learning, the XGBoost model was utilized to predict
+          prices and identify attributes with the greatest influence on listing
+          prices. The model successfully highlighted key features such as
+          property location and size as the most significant determinants of
+          price. However, the XGBoost model struggled to accurately capture
+          outliers, particularly for extremely high-priced properties, due to
+          their rarity and disproportionate impact on predictions. Despite this
+          limitation, the model demonstrated strong performance in predicting
+          prices for listings in a lower price range, offering some insight into
+          the factors driving Airbnb pricing dynamics in Los Angeles.
+        </p>
+      </div>
     </div>
   );
-}
+};
+
+export default Page;
