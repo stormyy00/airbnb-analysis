@@ -45,7 +45,7 @@ const Landing = () => {
             item.graphs.length > 0 &&
             item.graphs.map((graph, graphIndex) =>
               DATA.map((content) => (
-                <div key={`${graphIndex}-${content.id}`} className="space-y-4">
+                <div key={`${graphIndex}-${content.id}`} className="space-y-4 w-full">
                   {index === content.id && (
                     <>
                       <h4 id={content.link} className="text-2xl text-center font-semibold text-gray-800">

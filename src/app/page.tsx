@@ -1,7 +1,7 @@
 import Landing from "@/components/landing";
 import Link from "next/link";
 
-export const Page = () => {
+export default function page() {
   return (
     <div className="flex flex-col items-center justify-center w-3/5 gap-1 mb-10 mt-3">
       <h1 className="text-4xl font-semibold">AirBnB Analysis</h1>
@@ -84,6 +84,4 @@ export const Page = () => {
       </div>
     </div>
   );
-};
-
-export default Page;
+}
