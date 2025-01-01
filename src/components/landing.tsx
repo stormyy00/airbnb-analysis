@@ -12,7 +12,7 @@ const Landing = () => {
   useEffect(() => {
     const fetchFromFlask = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/data");
+        const response = await fetch("http://127.0.0.1:5000/api/data");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

@@ -14,27 +14,6 @@ CORS(app)
 app.debug = True
 
 
-# @app.route('/server/scrape', methods=['GET'])
-# def scrape():
-#     try:
-#         givingguide_2022_url = 'https://www.blueheartaction.org/giving-guide-2022'
-
-#         my_headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36", "Accept":"text/html,application/xhtml+xml,application/xml; q=0.9,image/webp,image/apng,*/*;q=0.8",}
-#         response = requests.get(givingguide_2022_url, headers=my_headers)
-#         soup = BeautifulSoup(response.content, "html.parser")
-
-#         org_section_find = soup.find('section', id='comp-la8gl467')
-#         data = []
-#         for org in org_section_find:
-#             # print(org.text)
-#             organization = org.text
-#             data.append(organization)
-
-#         return jsonify({"status": "success", "html": data})
-#     except requests.exceptions.RequestException as e:
-#         return jsonify({"status": "error", "message": str(e)})
-
-
 # Function to parse the notebook and extract graphs
 def parse_notebook(file_path):
     try:
@@ -61,7 +40,7 @@ def parse_notebook(file_path):
         return {"error": str(e)}
 
 
-@app.route('/data', methods=['GET'])
+@app.route('/api/data', methods=['GET'])
 def get_notebook_data():
     file_path = "../pynb/final_project.ipynb"  
     data = parse_notebook(file_path)
